@@ -3,9 +3,11 @@
 body {
     background-color: #F7F6F3;
     margin: 0;
+    box-sizing: border-box;
 }
 
 .main_background {
+    position: relative;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -16,6 +18,8 @@ body {
 }
 
 .main_glass_effect {
+    display: flex;
+    justify-content: center;
     width: 60%;
     height: 22rem;
     margin-top: 5.5rem;
@@ -26,12 +30,50 @@ body {
     backdrop-filter: blur(9px);
 }
 
-h3 {
-    display: flex;
-    justify-content: center;
-    color: #f8ffff;
+#pomodoro_button {
+    position: relative;
+    background: transparent;
+    border: 0;
     font-family: 'Playfair Display SC', serif;
+    color: #ffffff;
     font-weight: 500;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     margin-top: 2rem;
+    padding: 5px 50px;
+    transition: all .25s;
+}
+
+#pomodoro_button::after, #pomodoro_button::before {
+    position: absolute;
+    border: 2px solid #ffffff;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all .25s;
+}
+
+#pomodoro_button:hover::after {
+    transform: translate(-5px, -5px);
+}
+
+#pomodoro_button:hover::before {
+    transform: translate(5px, 5px);
+}
+
+.timerControl {
+    position: absolute;
+    color: #F7F6F3;
+    margin-top: 18rem;
+    font-size: 2rem;
+}
+
+.timer{
+    position: absolute;
+    font-family: 'Playfair Display SC', serif;
+    color: #F7F6F3;
+    margin-top: 7rem;
+    font-weight: 500;
+    font-size: 7rem;
 }
