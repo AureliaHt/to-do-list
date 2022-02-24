@@ -12,4 +12,4 @@ L'explication du projet se fera dans un off canvas.
 Wireframe et mock up réalisé sur Figma
 
 ![wireframe](figma/wireframe.png)
-![maquette](figma/maquettes.png)
+![maquette](figma/maquette.png)
