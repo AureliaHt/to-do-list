@@ -62,45 +62,46 @@
     <main>
         <div class="main_background">
             <div class="main_glass_effect">
-                <div class="modeSelector">
-                    <button
-                    class="modeSelector_button"
-                    id="short_button"
-                    data-mode="short"
-                    >
-                    5min break
-                    </button>
+
+                <div class="pomodoro_first_section">
+                    <div class="modeSelector">
+                        <button class="modeSelector_button active" id="pomodoro_button" data-mode="pomodoro">
+                            Pomodoro Timer
+                        </button>
+                    </div>
                 </div>
-                <div class="modeSelector">
-                    <button
-                        class="modeSelector_button active"
-                        id="pomodoro_button"
-                        data-mode="pomodoro"
-                    >
-                        Pomodoro Timer
-                    </button>
-                </div>
-                <div class="timerControl">
-                    <!--<i class="fa fa-refresh" id="restart" aria-hidden="true"></i>-->
-                    <i 
-                      class="fa fa-play"
-                      id="toggle"
-                      data-paused="true"
-                      aria-hidden="true"
-                      ></i>
-                    <!--<i class="fa fa-pause" id="pause" aria-hidden="true"></i>-->
-                    <!--<i class="fa fa-stop" id="pause" aria-hidden="true"></i>-->
-                </div>
-                <div class="modeSelector">
-                    <button 
-                      class="modeSelector_button" 
-                      id="long_button" 
-                      data-mode="long"
-                      >
-                        15min break
-                    </button>
-                </div>
+
+                <div class="pomodoro_second_section">
+                    <div class="modeSelector">
+                        <button
+                        class="modeSelector_button"
+                        id="short_button"
+                        data-mode="short"
+                        >
+                        5 min break
+                        </button>
+                    </div>
                 <h2 class="timer" id="timer" data-mode="pomodoro">25:00</h2>
+                    <div class="modeSelector">
+                        <button class="modeSelector_button" id="long_button" data-mode="long">
+                            15 min break
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pomodoro_third_section">
+                    <div class="timerControl">
+                        <!--<i class="fa fa-refresh" id="restart" aria-hidden="true"></i>-->
+                        <i 
+                        class="fa fa-play"
+                        id="toggle"
+                        data-paused="true"
+                        aria-hidden="true"
+                        ></i>
+                        <!--<i class="fa fa-pause" id="pause" aria-hidden="true"></i>-->
+                        <!--<i class="fa fa-stop" id="pause" aria-hidden="true"></i>-->
+                    </div>
+                </div>
             </div>
         </div>
     </main>

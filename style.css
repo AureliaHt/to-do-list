@@ -4,6 +4,7 @@ body {
     background-color: #F7F6F3;
     margin: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 .main_background {
@@ -19,17 +20,22 @@ body {
 
 .main_glass_effect {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     width: 60%;
     height: 22rem;
     margin-top: 5.5rem;
-    background: #f8f8f8;
+    background: #f7f6f3;
     background-color: rgba(200, 200, 200, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     backdrop-filter: blur(9px);
 }
 
+.pomodoro_first_section{
+    display: flex;
+    justify-content: center;
+}
 #pomodoro_button {
     position: relative;
     background: transparent;
@@ -38,11 +44,10 @@ body {
     color: #ffffff;
     font-weight: 500;
     font-size: 2.5rem;
-    margin-top: 2rem;
+    margin-top: -2rem;
     padding: 5px 50px;
     transition: all .25s;
 }
-
 #pomodoro_button::after, #pomodoro_button::before {
     position: absolute;
     border: 2px solid #ffffff;
@@ -53,27 +58,94 @@ body {
     left: 0;
     transition: all .25s;
 }
-
 #pomodoro_button:hover::after {
     transform: translate(-5px, -5px);
 }
-
 #pomodoro_button:hover::before {
     transform: translate(5px, 5px);
 }
 
-.timerControl {
+.pomodoro_second_section{
+    display: flex;
+    justify-content: space-evenly;
+}
+#short_button {
+    position: relative;
+    color: #ffffff;
+    background: transparent;
+    font-family: 'Playfair Display SC', serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    padding: 15px;
+    width: 6rem;
+    overflow: hidden;
+    z-index: 0;
+}
+
+#short_button::before{
     position: absolute;
-    color: #F7F6F3;
-    margin-top: 18rem;
-    font-size: 2rem;
+    content: '';
+    top: 90px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 60% 40% 0 0;
+    background: #ffffff;
+    transition: all 1.2s;
+    z-index: -1;
+}
+#short_button:hover::before{
+    top: 0;
+    border-radius: 0;
 }
 
 .timer{
-    position: absolute;
     font-family: 'Playfair Display SC', serif;
     color: #F7F6F3;
-    margin-top: 7rem;
+    margin-top: -2rem;
     font-weight: 500;
-    font-size: 7rem;
+    font-size: 6rem;
+}
+#long_button {
+    position: relative;
+    color: #ffffff;
+    background: transparent;
+    font-family: 'Playfair Display SC', serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    padding: 15px;
+    width: 6rem;
+    overflow: hidden;
+    z-index: 0;
+}
+#long_button::before{
+    position: absolute;
+    content: '';
+    top: 90px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 60% 40% 0 0;
+    background: #ffffff;
+    transition: all 1.2s;
+    z-index: -1;
+}
+#long_button:hover::before{
+    top: 0;
+    border-radius: 0;
+}
+
+.pomodoro_third_section{
+    display: flex;
+    justify-content: center;
+}
+.timerControl {
+    position: absolute;
+    color: #F7F6F3;
+    font-size: 2rem;
+    margin-top: -1rem;
 }
