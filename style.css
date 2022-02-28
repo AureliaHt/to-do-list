@@ -5,6 +5,7 @@ body {
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
+    scroll-behavior: smooth;
 }
 
 .main_background {
@@ -142,6 +143,55 @@ body {
     margin-top: -1rem;
 }
 
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32rem;
+    width: 100%;
+}
+.scroll_down{
+    position: relative;
+    height: 50px;
+    width: 30px;
+    border: 2px solid #505050;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.scroll_down::before,
+.scroll_down::after{
+    position: absolute;
+    content: '';
+    top: 20%;
+    left: 50%;
+    border: 2px solid #505050;
+    height: 9px;
+    width: 9px;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border-top: transparent;
+    border-left: transparent;
+    animation: scroll_down 1.5s ease-in-out infinite;
+}
+.scroll_down::after{
+    top: 30%;
+    animation-delay: .3s;
+}
+@keyframes scroll_down {
+    0%{
+        opacity: 0;
+    }
+    30%{
+        opacity: 1;
+    }
+    60%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        top: 90%;
+    }
+}
+
 #todo_list {
     position: relative;
     display: flex;
@@ -152,7 +202,6 @@ body {
     overflow: hidden;
     background: url(img/90s_holographic_bg.jpg) no-repeat center;
     background-size: cover;
-    margin-top: 20rem;
 }
 .todo_glass_effect{
     display: flex;

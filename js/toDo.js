@@ -1,10 +1,10 @@
 /* Select all the necessary Elements  */
-var input = document.querySelector('.todo_input');
-var MainTodoContainer = document.getElementById('todo_list')
-var addingButton = document.querySelector('.add_item');
-var deleteAllBtn = document.querySelector('.delete_button');
-var completedButton = document.querySelector('.completed');
-var removeButton = document.querySelector('.trash');
+const input = document.querySelector('.todo_input');
+const MainTodoContainer = document.getElementById('todo_list')
+const addingButton = document.querySelector('.add_item');
+const deleteAllBtn = document.querySelector('.delete_button');
+const completedButton = document.querySelector('.completed');
+const removeButton = document.querySelector('.trash');
 
 addingButton.addEventListener('click', function(e){
     /* stoping button behaviour */
@@ -13,20 +13,20 @@ addingButton.addEventListener('click', function(e){
     /* Create all the elements */
     if(input.value.trim()){
         /* UL Tag */
-        var ulTag = document.createElement('ul');
+        let ulTag = document.createElement('ul');
         ulTag.classList.add('todo-list-container');
         /* Todo list div */
-        var todoList = document.createElement('div');
+        let todoList = document.createElement('div');
         todoList.classList.add('todo-list');
         /* LI Tag */
-        var liTag = document.createElement('li');
+        let liTag = document.createElement('li');
         liTag.innerText = input.value;
         liTag.classList.add('todo-item');
         /* Button Div */
-        var buttonDiv = document.createElement('div');
+        let buttonDiv = document.createElement('div');
         buttonDiv.classList.add('button');
         /* completed button element1 */
-        var completeButton = document.createElement('button');
+        let completeButton = document.createElement('button');
         completeButton.classList.add('completed');
         completeButton.innerHTML = '<i class="fas fa-check"></i>';
         /* Edit Button */
