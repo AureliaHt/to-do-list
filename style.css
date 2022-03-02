@@ -233,7 +233,7 @@ section{
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 60%;
+    width: 40%;
     height: 50rem;
     margin-top: 5.5rem;
     background: #f7f6f3;
@@ -241,6 +241,36 @@ section{
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     backdrop-filter: blur(9px);
+}
+
+h1 {
+    position: relative;
+    background: transparent;
+    border: 0;
+    font-family: 'Playfair Display SC', serif;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: 5px 50px;
+    transition: all .25s;
+}
+h1::after, h1::before {
+    position: absolute;
+    border: 2px solid #ffffff;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all .25s;
+}
+h1:hover::after {
+    transform: translate(-5px, -5px);
+}
+h1:hover::before {
+    transform: translate(5px, 5px);
 }
 
 @media only screen and (max-width: 1630px){
