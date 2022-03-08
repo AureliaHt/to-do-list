@@ -167,7 +167,7 @@ body {
     margin-top: 10rem;
 }
 
-section{
+.section_scroll_down{
     grid-column: 1/6;
     grid-row: 7;
     display: flex;
@@ -218,13 +218,13 @@ section{
     }
 }
 
-.todo_list {
+.todo_list_background {
     position: relative;
     display: flex;
     justify-content: center;
     align-content: center;
     width: 100%;
-    height: 60rem;
+    height: 80rem;
     overflow: hidden;
     background: url(img/90s_holographic_bg.jpg) no-repeat center;
     background-size: cover;
@@ -233,20 +233,14 @@ section{
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 50%;
-    height: 50rem;
+    width: 60%;
+    height: 70rem;
     margin-top: 5.5rem;
     background: #f7f6f3;
     background-color: rgba(200, 200, 200, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     backdrop-filter: blur(9px);
-}
-
-input{
-    width: 100%;
-    padding: 10px;
-    font-size: 20px;
 }
 
 h1 {
@@ -279,17 +273,24 @@ h1:hover::before {
     transform: translate(5px, 5px);
 }
 
-div#header{
-    text-align: center;
+input{
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
 }
 
-div#header div#input_container {
+div#todo_header{
+    display: flex;
+    justify-content: center;
+}
+
+div#todo_header div#input_container {
     margin-bottom: 20px;
     position: relative;
     padding-top: 15px;
 }
 
-div#header div#input_container input#todo_input{
+div#todo_header div#input_container input#todo_input{
     border: 0;
     border-bottom: 2px solid #ffffff;
     outline: 0;
@@ -301,71 +302,202 @@ div#header div#input_container input#todo_input{
     letter-spacing: 1.25px;
 }
 
-div#header div#input_container label {
+div#todo_header div#input_container input#todo_input:focus {
+    border-bottom: 2px solid #ffffff;
+}
+
+div#todo_header div#input_container input#todo_input::placeholder {
+    color: transparent;
+}
+
+div#todo_header div#input_container label {
     position: absolute;
     top: 0;
     z-index: -1;
     display: block;
-    transition: .2s;
+    transition: 0.2s;
     font-size: 16px;
     color: #ffffff;
     font-weight: 500;
 }
 
-div#header div#input_container input#todo_input:placeholder-shown ~ label {
+div#todo_header div#input_container input#todo_input:placeholder-shown ~ label {
     top: 45px;
     color: #ffffff;
     font-size: 30px;
     font-weight: 100;
 }
 
-div#header div#input_container input#todo_input:focus ~ label {
+div#todo_header div#input_container input#todo_input:focus ~ label {
     top: 0;
     font-size: 16px;
     color: #845ec5;
     font-weight: 500;
 }
 
-div#header button#todo_add_button {
-    background-color: #845ec5;
-    color: #f7f6f3;
-    font-size: 35px;
+div#todo_header button#todo_add_button {
+    position: relative;
+    color: #ffffff;
+    background: transparent;
+    font-family: 'Playfair Display SC', serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    padding: 5px 15px;
+    margin-left: 2rem;
+    width: 5rem;
+    height: 5rem;
+    margin-top: 3rem;
+    overflow: hidden;
+    z-index: 0;
+}
+div#todo_header button#todo_add_button::before{
+    position: absolute;
+    content: '';
+    top: 90px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 60% 40% 0 0;
+    background: #ffffff;
+    transition: all 1.2s;
+    z-index: -1;
+}
+div#todo_header button#todo_add_button:hover::before{
+    top: 0;
+    border-radius: 0;
 }
 
-
+.scroll_top{
+    position: relative;
+    height: 50px;
+    width: 30px;
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 15rem;
+}
+.scroll_top::before,
+.scroll_top::after{
+    position: absolute;
+    content: '';
+    bottom: 20%;
+    left: 50%;
+    border: 2px solid #ffffff;
+    height: 9px;
+    width: 9px;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border-bottom: transparent;
+    border-right: transparent;
+    animation: scroll_top 2s ease-in-out infinite;
+}
+.scroll_top::after{
+    bottom: 30%;
+    animation-delay: .3s;
+}
+@keyframes scroll_top {
+    100%{
+        opacity: 0;
+    }
+    60%{
+        opacity: 1;
+    }
+    30%{
+        opacity: 1;
+    }
+    0%{
+        opacity: 0;
+    }
+}
 
 @media only screen and (max-width: 1630px){
     #pomodoroButton{
-        grid-column: 3;
-        grid-row: 3;
-        position: relative;
-        background: transparent;
-        border: 0;
-        font-weight: 500;
-        font-size: 2.5rem;
-        margin-left: 21rem;
+        margin-left: 20rem;
         margin-bottom: 5rem;
         padding: 5px 50px;
-        transition: all .25s;
     }
     .timer{
-        grid-column: 3;
-        grid-row: 5;
         margin-top: 8rem;
         margin-right: 8%;
         font-weight: 450;
         font-size: 6rem;
     }
     #shortButton {
-        grid-column: 2;
-        grid-row: 4;
-        margin-left: 10%;
+        margin-left: 8%;
         margin-bottom: 1rem;
     }
     #longButton {
-        grid-column: 4;
-        grid-row: 4;
         margin-left: 2rem;
         width: 6rem;
+    }
+    .timerControl {
+    margin-left: 30rem;
+    }
+    .section_scroll_down{
+    height: 28rem;
+    }
+    .scroll_down{
+        margin-top: 1rem;
+    }
+}
+
+@media only screen and (max-width: 1480px){
+    #pomodoroButton{
+    margin-left: 18rem;
+    }
+    #shortButton {
+    margin-left: 5%;
+    }
+    .timerControl {
+    margin-left: 27rem;
+    }
+    .section_scroll_down{
+    height: 24rem;
+    }
+    .scroll_down{
+    margin-top: 6rem;
+    }
+    input{
+    width: 90%;
+    }
+    .scroll_top{
+    margin-top: 12rem;
+    }
+}
+
+@media only screen and (max-width: 1400px){
+    #pomodoroButton{
+    margin-left: 16rem;
+    }
+    #shortButton {
+    font-size: 1rem;
+    margin-left: 5%;
+    width: 5rem;
+    }
+   #longButton {
+    font-size: 1rem;
+    margin-left: 4%;
+    padding: 13px;
+    width: 5rem;
+    }
+    .timerControl {
+    margin-left: 25rem;
+    }
+    .timer{
+    margin-right: 4%;
+    font-weight: 400;
+    font-size: 5rem;
+    }
+    div#todo_header{
+    flex-direction: column;
+    align-items: center;
+    }
+     input{
+    width: 100%;
+    }
+    div#todo_header button#todo_add_button {
+    margin-left: 0;
+    margin-top: 1rem;
     }
 }
